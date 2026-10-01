@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <title>Документ. — документы для бизнеса</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <svg aria-hidden="true" class="svg-sprite">
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 13h6M9 17h6"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2M16 4a3 3 0 0 1 0 6M17 13a5 5 0 0 1 4 5v2"/></symbol>
+      <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 22V3h11v19M15 10h5v12M8 7h3M8 11h3M8 15h3M2 22h20"/></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.3 2.1c-.8.4-1.1.9-1.1 1.9M12 17h.01"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    </svg>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark">Д.</span><span>Документ.</span></div>
+      <button class="sidebar-close icon-button" id="sidebarClose" aria-label="Закрыть меню"><svg><use href="#i-x"/></svg></button>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a class="nav-link active" href="#home" data-section="home"><svg><use href="#i-home"/></svg>Главная</a>
+        <a class="nav-link" href="#documents" data-section="documents"><svg><use href="#i-file"/></svg>Мои документы<span class="badge">4</span></a>
+        <a class="nav-link" href="#partners" data-section="partners"><svg><use href="#i-users"/></svg>Контрагенты</a>
+      </nav>
+      <p class="nav-label">Шаблоны</p>
+      <nav class="main-nav templates-nav">
+        <a class="nav-link" href="#templates" data-category="Контрагенты"><span class="nav-dot coral"></span>Контрагенты</a>
+        <a class="nav-link" href="#templates" data-category="Кадры"><span class="nav-dot blue"></span>Кадры</a>
+        <a class="nav-link" href="#templates" data-category="Госорганы"><span class="nav-dot violet"></span>Для госорганов</a>
+        <a class="nav-link" href="#templates" data-category="Приказы"><span class="nav-dot gold"></span>Приказы</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a class="nav-link" href="#company" data-section="company"><svg><use href="#i-building"/></svg>Моя организация</a>
+        <a class="nav-link" href="#help"><svg><use href="#i-help"/></svg>Помощь</a>
+        <div class="user-card">
+          <span class="avatar">АИ</span><span><strong>Алексей Иванов</strong><small>ИП Иванов А.А.</small></span><button aria-label="Меню профиля">•••</button>
+        </div>
+      </div>
+    </aside>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main>
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobileMenu" aria-label="Открыть меню"><svg><use href="#i-menu"/></svg></button>
+        <div class="search-wrap"><svg><use href="#i-search"/></svg><input id="searchInput" type="search" placeholder="Найти шаблон или документ" aria-label="Поиск"/><kbd>⌘ K</kbd></div>
+        <button class="icon-button notification" aria-label="Уведомления"><svg><use href="#i-bell"/></svg><i></i></button>
+        <button class="create-top" data-open-wizard><svg><use href="#i-plus"/></svg><span>Создать документ</span></button>
+      </header>
+
+      <div class="page">
+        <section class="welcome">
+          <div><p class="eyebrow">ЧЕТВЕРГ, 1 ОКТЯБРЯ</p><h1>Добрый день, Алексей!</h1><p>Что подготовим сегодня?</p></div>
+          <div class="trust-pill"><span><svg><use href="#i-check"/></svg></span><div><strong>Данные защищены</strong><small>Храним только то, что нужно</small></div></div>
+        </section>
+
+        <section class="quick-grid" aria-label="Быстрое создание">
+          <button class="quick-card peach" data-template="Договор с контрагентом"><span class="quick-icon"><svg><use href="#i-users"/></svg></span><span><strong>Договор с контрагентом</strong><small>Поставка, услуги, подряд</small></span><svg class="arrow"><use href="#i-chevron"/></svg></button>
+          <button class="quick-card mint" data-template="Кадровый документ"><span class="quick-icon"><svg><use href="#i-brief"/></svg></span><span><strong>Кадровый документ</strong><small>Приём, перевод, увольнение</small></span><svg class="arrow"><use href="#i-chevron"/></svg></button>
+          <button class="quick-card lavender" data-template="Документ для госорганов"><span class="quick-icon"><svg><use href="#i-building"/></svg></span><span><strong>Для госорганов</strong><small>Заявления, уведомления</small></span><svg class="arrow"><use href="#i-chevron"/></svg></button>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel recent-panel">
+            <div class="section-head"><div><h2>Последние документы</h2><p>Продолжите работу или скачайте готовое</p></div><button class="text-button" data-all-docs>Все документы <svg><use href="#i-chevron"/></svg></button></div>
+            <div class="document-list" id="documentList">
+              <article class="document-row" data-name="Договор оказания услуг ООО Вектор">
+                <span class="doc-icon coral-bg"><svg><use href="#i-file"/></svg></span>
+                <div class="doc-info"><strong>Договор оказания услуг</strong><small>ООО «Вектор» · № 14 от 28.09.2026</small></div>
+                <span class="status ready"><svg><use href="#i-check"/></svg>Готов</span><time>28 сен</time><button class="download" aria-label="Скачать договор"><svg><use href="#i-download"/></svg></button>
+              </article>
+              <article class="document-row" data-name="Трудовой договор Мария Котова">
+                <span class="doc-icon blue-bg"><svg><use href="#i-brief"/></svg></span>
+                <div class="doc-info"><strong>Трудовой договор</strong><small>Котова Мария · менеджер по продажам</small></div>
+                <span class="status draft"><svg><use href="#i-clock"/></svg>Черновик</span><time>26 сен</time><button class="row-more" aria-label="Действия">•••</button>
+              </article>
+              <article class="document-row" data-name="Акт выполненных работ ООО Вектор">
+                <span class="doc-icon coral-bg"><svg><use href="#i-file"/></svg></span>
+                <div class="doc-info"><strong>Акт выполненных работ</strong><small>ООО «Вектор» · к договору № 14</small></div>
+                <span class="status ready"><svg><use href="#i-check"/></svg>Готов</span><time>25 сен</time><button class="download" aria-label="Скачать акт"><svg><use href="#i-download"/></svg></button>
+              </article>
+              <article class="document-row" data-name="Приказ о приёме на работу">
+                <span class="doc-icon gold-bg"><svg><use href="#i-file"/></svg></span>
+                <div class="doc-info"><strong>Приказ о приёме на работу</strong><small>Котова Мария · № 8-к</small></div>
+                <span class="status ready"><svg><use href="#i-check"/></svg>Готов</span><time>24 сен</time><button class="download" aria-label="Скачать приказ"><svg><use href="#i-download"/></svg></button>
+              </article>
+              <div class="empty-search" id="emptySearch">Ничего не найдено. Попробуйте изменить запрос.</div>
+            </div>
+          </div>
+
+          <aside class="side-column">
+            <div class="panel company-panel">
+              <div class="company-head"><span class="company-logo">ИП</span><div><h3>ИП Иванов А.А.</h3><p>УНП 192345678</p></div><button class="row-more">•••</button></div>
+              <div class="progress-label"><span>Профиль организации</span><strong>80%</strong></div><div class="progress"><i></i></div>
+              <p class="company-hint">Добавьте банковские реквизиты — и мы подставим их в документы.</p>
+              <button class="outline-button" data-company>Заполнить реквизиты</button>
+            </div>
+            <div class="ad-card"><span>ПАРТНЁРСКИЙ МАТЕРИАЛ</span><h3>Счёт для бизнеса — бесплатно</h3><p>Открытие онлайн за 10 минут</p><a href="#partner">Подробнее <svg><use href="#i-chevron"/></svg></a><div class="ad-shape"></div></div>
+          </aside>
+        </section>
+
+        <section class="popular-section">
+          <div class="section-head"><div><h2>Популярные шаблоны</h2><p>Проверенные документы для ежедневных задач</p></div><button class="text-button" data-all-templates>Смотреть все <svg><use href="#i-chevron"/></svg></button></div>
+          <div class="template-grid" id="templateGrid">
+            <button class="template-card" data-template="Договор поставки" data-category-name="Контрагенты"><span class="doc-icon coral-bg"><svg><use href="#i-file"/></svg></span><span><strong>Договор поставки</strong><small>Контрагенты</small></span><svg class="arrow"><use href="#i-chevron"/></svg></button>
+            <button class="template-card" data-template="Трудовой договор" data-category-name="Кадры"><span class="doc-icon blue-bg"><svg><use href="#i-brief"/></svg></span><span><strong>Трудовой договор</strong><small>Кадры</small></span><svg class="arrow"><use href="#i-chevron"/></svg></button>
+            <button class="template-card" data-template="Акт выполненных работ" data-category-name="Контрагенты"><span class="doc-icon violet-bg"><svg><use href="#i-file"/></svg></span><span><strong>Акт выполненных работ</strong><small>Контрагенты</small></span><svg class="arrow"><use href="#i-chevron"/></svg></button>
+          </div>
+        </section>
+        <footer><span>© 2026 Документ.</span><span>Шаблоны требуют проверки юристом перед использованием</span></footer>
+      </div>
+    </main>
+
+    <div class="modal" id="wizardModal" role="dialog" aria-modal="true" aria-labelledby="wizardTitle">
+      <div class="modal-card wizard-card">
+        <button class="modal-close icon-button" data-close aria-label="Закрыть"><svg><use href="#i-x"/></svg></button>
+        <p class="eyebrow">НОВЫЙ ДОКУМЕНТ</p><h2 id="wizardTitle">Создайте документ за 3 минуты</h2><p class="modal-subtitle">Ответьте на несколько вопросов — реквизиты подставим автоматически.</p>
+        <div class="steps"><i class="active"></i><i></i><i></i><span>Шаг 1 из 3</span></div>
+        <form id="wizardForm">
+          <label>Какой документ нужен?<select id="documentType"><option>Трудовой договор</option><option>Договор оказания услуг</option><option>Договор поставки</option><option>Акт выполненных работ</option><option>Приказ о приёме</option></select></label>
+          <div class="form-row"><label>ФИО сотрудника / контрагента<input required placeholder="Например, Котова Мария Сергеевна"/></label><label>Должность<input required placeholder="Менеджер по продажам"/></label></div>
+          <div class="auto-data"><svg><use href="#i-check"/></svg><span><strong>Реквизиты ИП Иванов А.А. добавятся автоматически</strong><small>Из профиля организации</small></span></div>
+          <button class="primary-button" type="submit">Продолжить <svg><use href="#i-chevron"/></svg></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="companyModal" role="dialog" aria-modal="true" aria-labelledby="companyTitle">
+      <div class="modal-card">
+        <button class="modal-close icon-button" data-close aria-label="Закрыть"><svg><use href="#i-x"/></svg></button>
+        <p class="eyebrow">МОЯ ОРГАНИЗАЦИЯ</p><h2 id="companyTitle">Реквизиты компании</h2><p class="modal-subtitle">Один раз заполните данные — они появятся во всех документах.</p>
+        <form id="companyForm"><label>Название организации<input name="name" value="ИП Иванов А.А."/></label><div class="form-row"><label>УНП<input name="unp" value="192345678"/></label><label>Расчётный счёт<input name="account" placeholder="BY00 0000 0000 0000 0000 0000 0000"/></label></div><label>Банк<input name="bank" placeholder="Название и BIC банка"/></label><button class="primary-button" type="submit">Сохранить реквизиты</button></form>
+      </div>
+    </div>
+    <div class="toast" id="toast"><svg><use href="#i-check"/></svg><span></span></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
